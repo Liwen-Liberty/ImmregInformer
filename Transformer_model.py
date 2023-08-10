@@ -155,7 +155,7 @@ class Scaled_Dot_Product_Attention(nn.Module):
 
         add_our_attention=True
         if add_our_attention:
-            gene_mutation_dia_1=np.load("/home/jby2/SNN-master/code_by_jby/data/gene_mutation_dia_0.npy")
+            gene_mutation_dia_1=np.load("./data/gene_mutation_dia_0.npy")
             tem_tensor=torch.FloatTensor(gene_mutation_dia_1)
             tem_tensor=tem_tensor.unsqueeze(0).repeat(attention.shape[0], 1, 1).to(config.device)#因为是多头注意力，所以有多组需要加上自己定义的attention
             attention=attention+tem_tensor
