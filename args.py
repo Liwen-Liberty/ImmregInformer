@@ -21,6 +21,6 @@ class Config(object):
         self.num_head = 1#多头个数
         self.num_encoder = 1 #编码层个数
         self.n_splits = 5#k折交叉验证
-        self.score_mutation_path="/home/jby2/SNN-master/code_by_jby/data/score_mutation.npy"
+        self.score_mutation_path="./data/score_mutation.npy"
         self.start=0 #这里新加一个参数，用于score_mutation的batch的计数
     
