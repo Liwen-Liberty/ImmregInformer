@@ -74,19 +74,19 @@ for step in range(config.num_epochs):
     print("train_acc:",train_acc)
     if train_acc>train_acc_temp:
         #保存embedding和label
-        np.savetxt('/home/jby2/SNN-master/code_by_jby_for_attention/Results/embedding.csv',empty.detach().cpu().numpy(),fmt='%.10f',delimiter=',')
-        np.savetxt('/home/jby2/SNN-master/code_by_jby_for_attention/Results/label.csv',y_train.detach().cpu().numpy(),fmt='%.10f',delimiter=',')
+        np.savetxt('./Result/embedding.csv',empty.detach().cpu().numpy(),fmt='%.10f',delimiter=',')
+        np.savetxt('./Result/label.csv',y_train.detach().cpu().numpy(),fmt='%.10f',delimiter=',')
         
         #保存模型
-        torch.save(model.state_dict(), '/home/jby2/SNN-master/code_by_jby_for_attention/Results/model_state_dict.pt')
+        torch.save(model.state_dict(), './Result/model_state_dict.pt')
 
         #保存权重
         finaltensor=torch.mm(model.fc2.weight.data,model.fc1.weight.data)
-        np.savetxt('/home/jby2/SNN-master/code_by_jby_for_attention/Results/fc1weight.csv',finaltensor.detach().cpu().numpy(),fmt='%.10f',delimiter=',')
+        np.savetxt('./Result/fc1weight.csv',finaltensor.detach().cpu().numpy(),fmt='%.10f',delimiter=',')
 
 
         #保存自注意力
-        np.savetxt('/home/jby2/SNN-master/code_by_jby_for_attention/Results/selfattention.csv',selfattention.detach().cpu().numpy(),fmt='%.10f',delimiter=',')
+        np.savetxt('./Result/selfattention.csv',selfattention.detach().cpu().numpy(),fmt='%.10f',delimiter=',')
         print('保存成功')
         train_acc_temp=train_acc
     empty=torch.empty(0,config.n_vocab*config.embed).to(config.device)
