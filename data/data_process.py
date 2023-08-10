@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 def load_data_save():
-    df = pd.read_csv(r"/home/jby2/SNN-master/data/Solid_tumor_CYT_score_df.csv")
-    rf = pd.read_csv(r"/home/jby2/SNN-master/data/Solid_tumor_mutation_status_mat.csv")
+    df = pd.read_csv(r"./data/Solid_tumor_CYT_score_df.csv")
+    rf = pd.read_csv(r"./data/Solid_tumor_mutation_status_mat.csv")
     #两个pands匹配构建最终的数据
     final=[]#保存最终特征矩阵
     for i in range(len(df)):
@@ -15,11 +15,11 @@ def load_data_save():
         final.append(pair)
     #保存到本地
     final_array=np.array(final)
-    np.save("/home/jby2/SNN-master/code_by_jby/data/score_mutation.npy",final_array)
+    np.save("./data/score_mutation.npy",final_array)
 
 def load_data_save2():
-    df = pd.read_csv(r"/home/jby2/SNN-master/data/Solid_tumor_CYT_score_df.csv")
-    rf = pd.read_csv(r"/home/jby2/SNN-master/data/Solid_tumor_mutation_status_mat.csv")
+    df = pd.read_csv(r"./data/Solid_tumor_CYT_score_df.csv")
+    rf = pd.read_csv(r"./data/Solid_tumor_mutation_status_mat.csv")
     #基因的个数
     n_gene=487
     final=[]
@@ -33,18 +33,18 @@ def load_data_save2():
     
     #保存到本地
     final_array=np.array(final)
-    np.save("/home/jby2/SNN-master/code_by_jby/data/score_gene_num_vector.npy",final_array)
+    np.save("./data/score_gene_num_vector.npy",final_array)
 
 def load_data_save3():
-    df = pd.read_csv(r"/home/jby2/SNN-master/data/Solid_tumor_mutation_cooccurrence_mat.csv",sep=",",index_col=0)
+    df = pd.read_csv(r"./data/Solid_tumor_mutation_cooccurrence_mat.csv",sep=",",index_col=0)
     tem=df.values
     #对角线元素为1
-    np.save("/home/jby2/SNN-master/code_by_jby/data/gene_mutation_dia_1.npy",tem)
+    np.save("./data/gene_mutation_dia_1.npy",tem)
     #对角线元素为0，用于看哪种效果好
     row, col = np.diag_indices_from(tem)
     tem[row,col]=0
 
-    np.save("/home/jby2/SNN-master/code_by_jby/data/gene_mutation_dia_0.npy",tem)
+    np.save("./data/gene_mutation_dia_0.npy",tem)
 if __name__ == "__main__":
     
     # 我们需要的第一个文件是，列是label feature是01向量，表示基因是否突变
