@@ -42,7 +42,7 @@ scDecipher is tested to work under:
 * Install [CellChat v1.6.0](https://github.com/sqjin/CellChat/tree/master) using ` devtools::install_github("sqjin/CellChat") ` in the R environment if you encounter any issue.
 * Install [NicheNet v1.1.0](https://github.com/saeyslab/nichenetr) using ` devtools::install_github("saeyslab/nichenetr") ` in the R environment if you encounter any issue.
 * Install [ICELLNET](https://github.com/soumelis-lab/ICELLNET) using ` install_github("soumelis-lab/ICELLNET",ref="master", subdir="icellnet") ` in the R environment if you encounter any issue.
-* Install [R package glmnetcr]
+* Install [R package glmnetcr ]()
 
 
 # Quick start
@@ -138,46 +138,7 @@ Visualization of results:
   <img src="https://github.com/jiboyalab/scDecipher/blob/main/IMG/folr2tam.png" alt="Editor" width="500">
 </div>
 
-## 4，prioritize the dominant cell communication assmebly that affected functional states of malignant cells
-```
-python ./src/tutorials3/main.py --count ./data/RCC_scRNA_P76_matrix.txt --meta ./data/RCC_scRNA_P76_metadata.txt --lr_file ./output/final_lr.csv --cell_type Malignant --cell_state EMT --dca_rank_result ./output/state_dca_rank_result.csv
-```
-**Arguments**:
 
-| **Arguments** | **Detail** |
-| --- | --- |
-| **count** | Count matrix / normalized count matrix path. |
-| **meta** | Meta data (celltypes annotation) path. |
-| **lr_file** | The final results of LR pairs. |
-| **cell_type** | The specific cell type.  |
-| **cell_state** | [Angiogenesis; Apoptosis; CellCycle; Differentiation; DNAdamage; DNArepair; EMT; Hypoxia; Inflammation; Invasion; Metastasis; Proliferation; Quiescence; Stemness.]  |
-| **dca_rank_result** | The result of prioritize the dominant cell communication assmebly that affected functional states of malignant cells. |
-
-
-Visualization of results:
-<div align="center">
-  <img src="https://github.com/jiboyalab/scDecipher/blob/main/IMG/cellstate.png" alt="Editor" width="500">
-</div>
-
-## 5，clinical intervertion altered effect of cell communication on gene expression
-```
-python ./src/tutorials1/main.py --count ./data/RCC_scRNA_P915_matrix.txt --meta ./data/RCC_scRNA_P915_metadata.txt --lr_file ./output/final_lr.csv --gene CD8A --dca_rank_result ./output/P915_CD8A_dca_rank_result.csv --ccc_ratio_result ./output/P915_CD8A_ccc_ratio_result.csv
-```
-**Arguments**:
-
-| **Arguments** | **Detail** |
-| --- | --- |
-| **count** | Count matrix / normalized count matrix path. |
-| **meta** | Meta data (celltypes annotation) path. |
-| **lr_file** | The final results of LR pairs. |
-| **gene** | The specific target gene name  |
-| **dca_rank_result** | The result of prioritize the dominant cell communication assmebly that regulates the target gene expression pattern. |
-| **ccc_ratio_result** | The result of ratio of different cell types affected by cellular communication. |
-
-Visualization of results:
-<div align="center">
-  <img src="https://github.com/jiboyalab/scDecipher/blob/main/IMG/cd8arankchange.png" alt="Editor" width="500">
-</div>
 
 ===========================================================================
 
