@@ -42,12 +42,13 @@ scDecipher is tested to work under:
 * Install [CellChat v1.6.0](https://github.com/sqjin/CellChat/tree/master) using ` devtools::install_github("sqjin/CellChat") ` in the R environment if you encounter any issue.
 * Install [NicheNet v1.1.0](https://github.com/saeyslab/nichenetr) using ` devtools::install_github("saeyslab/nichenetr") ` in the R environment if you encounter any issue.
 * Install [ICELLNET](https://github.com/soumelis-lab/ICELLNET) using ` install_github("soumelis-lab/ICELLNET",ref="master", subdir="icellnet") ` in the R environment if you encounter any issue.
+* Install [R package glmnetcr]
 
 
 # Quick start
 To reproduce our results:
 
-## 1，infer ligand–receptor (L-R) pairs from single-cell RNA sequencing data
+## 1，Application and validation in the identification of immune-regulators
 ```
 cellphonedb method statistical_analysis ./data/RCC_scRNA_P76_metadata.txt ./data/RCC_scRNA_P76_matrix.txt --counts-data=gene_name --threads 100 --output-path ./output/
 ```
@@ -90,7 +91,7 @@ python ./tools/process_final_lr.py --lr_cellphonedb ./output/process_cellphonedb
 | **count** | Count matrix / normalized count matrix path. |
 | **output** | The final results of LR pairs. |
 
-## 2，prioritize the dominant cell communication assmebly that regulates the target gene expression pattern
+## 2，nterplay of cancer drivers in regulating immune response
 ```
 python ./src/tutorials1/main.py --count ./data/RCC_scRNA_P76_matrix.txt --meta ./data/RCC_scRNA_P76_metadata.txt --lr_file ./output/final_lr.csv --gene CD8A --dca_rank_result ./output/CD8A_dca_rank_result.csv --ccc_ratio_result ./output/CD8A_ccc_ratio_result.csv
 ```
@@ -116,7 +117,7 @@ Visualization of results:
   <img src="https://github.com/jiboyalab/scDecipher/blob/main/IMG/cd8adeltae.png" alt="Editor" width="400">
 </div>
 
-## 3，prioritize the dominant cell communication assmebly that regulates the key factors in specific cell type
+## 3，Prioritizing cancer drivers in order of contribution to immune regulation
 ```
 python ./src/tutorials2/main.py --count ./data/RCC_scRNA_P76_matrix.txt --meta ./data/RCC_scRNA_P76_metadata.txt --lr_file ./output/final_lr.csv --gene FOLR2 --cell_type TAM --dca_rank_result ./output/FOLR2_dca_rank_result.csv --ccc_ratio_result ./output/FOLR2_ccc_ratio_result.csv
 ```
