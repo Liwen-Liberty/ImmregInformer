@@ -87,6 +87,16 @@ python ./tools/process_final_lr.py --lr_cellphonedb ./output/process_cellphonedb
 | **count** | Count matrix / normalized count matrix path. |
 | **output** | The final results of LR pairs. |
 
+<div align="center">
+  <img src="https://github.com/Liwen-Liberty/ImmregInformer/blob/main/readmepic/Figure2.png" alt="Editor" width="500">
+</div>
+
+===========================================================================
+
+<div align="center">
+  <img src="https://github.com/Liwen-Liberty/ImmregInformer/blob/main/readmepic/Figure3.png" alt="Editor" width="500">
+</div>
+
 ## 2，Interplay of cancer drivers in regulating immune response
 ```
 python ./src/tutorials1/main.py --count ./data/RCC_scRNA_P76_matrix.txt --meta ./data/RCC_scRNA_P76_metadata.txt --lr_file ./output/final_lr.csv --gene CD8A --dca_rank_result ./output/CD8A_dca_rank_result.csv --ccc_ratio_result ./output/CD8A_ccc_ratio_result.csv
@@ -104,10 +114,9 @@ python ./src/tutorials1/main.py --count ./data/RCC_scRNA_P76_matrix.txt --meta .
 
 Visualization of results:
 <div align="center">
-  <img src="(https://github.com/Liwen-Liberty/ImmregInformer/blob/main/readmepic/Figure4.png)" alt="Editor" width="500">
+  <img src="https://github.com/Liwen-Liberty/ImmregInformer/blob/main/readmepic/Figure4.png" alt="Editor" width="500">
 </div>
 
-===========================================================================
 
 
 ## 3，Prioritizing cancer drivers in order of contribution to immune regulation
