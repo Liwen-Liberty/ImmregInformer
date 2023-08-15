@@ -42,7 +42,7 @@ scDecipher is tested to work under:
 * Install [CellChat v1.6.0](https://github.com/sqjin/CellChat/tree/master) using ` devtools::install_github("sqjin/CellChat") ` in the R environment if you encounter any issue.
 * Install [NicheNet v1.1.0](https://github.com/saeyslab/nichenetr) using ` devtools::install_github("saeyslab/nichenetr") ` in the R environment if you encounter any issue.
 * Install [ICELLNET](https://github.com/soumelis-lab/ICELLNET) using ` install_github("soumelis-lab/ICELLNET",ref="master", subdir="icellnet") ` in the R environment if you encounter any issue.
-* Install [R package glmnetcr ]()
+* Install [R package glmnetcr](https://github.com/cran/glmnetcr) using ` devtools::install_github("cran/glmnetcr") ` in the R environment if you encounter any issue.
 
 
 # Quick start
