@@ -26,7 +26,7 @@ To fetch indicators of immune response regulation from tumor somatic mutation pr
 
 ## Installation
 
-scDecipher is tested to work under:
+ImmRegInformer is tested to work under:
 
 ```
 * Python 3.8.0
@@ -46,7 +46,7 @@ To reproduce our results:
 
 ## 1. Application and validation in the identification of immune-regulators
 ```
-cellphonedb method statistical_analysis ./data/RCC_scRNA_P76_metadata.txt ./data/RCC_scRNA_P76_matrix.txt --counts-data=gene_name --threads 100 --output-path ./output/
+python ./main.py
 ```
 **Arguments**:
 
@@ -74,7 +74,7 @@ Rscript ./tools/run_icellnet.R --count ./data/RCC_scRNA_P76_matrix.txt --meta ./
 
 ```
 # Obtain the intersection of LR pairs output by 4 cellular communication tools, which are required to be found by at least 2 tools and have expression in scRNA-seq data.
-python ./tools/process_final_lr.py --lr_cellphonedb ./output/process_cellphonedb_lr.csv --lr_cellchat ./output/process_cellchat_lr.csv --lr_nichenet ./output/process_nichenet_lr.csv --lr_icellnet ./output/process_icellchat_lr.csv --count ./data/RCC_scRNA_P76_matrix.txt --output ./output/final_lr.csv
+
 ```
 **Arguments**:
 
@@ -145,7 +145,7 @@ python ./src/tutorials2/main.py --count ./data/RCC_scRNA_P76_matrix.txt --meta .
 
 # Contributing
 
-liwen Xu, boya Ji, yujun Peng ..
+liwen Xu, boya Ji, yijun Peng, wending Pi, shaoliang Peng*
 
 # Cite
 <p align="center">
@@ -162,7 +162,7 @@ liwen Xu, boya Ji, yujun Peng ..
 
 
 # Contacts
-If you have any questions or comments, please feel free to email: byj@hnu.edu.cn.
+If you have any questions or comments, please feel free to email: xuliwen@hnu.edu.cn.
 
 # License
 
