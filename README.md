@@ -26,7 +26,7 @@ To fetch indicators of immune response regulation from tumor somatic mutation pr
 
 ## Installation
 
-ImmRegInformer is tested to work under:
+ImmRegInformer is tested to work under the:
 
 ```
 * Python 3.8.0
@@ -35,7 +35,7 @@ ImmRegInformer is tested to work under:
 * Anndata 0.8.0
 * R 4.2.2
 * Numpy 1.23.5
-* Other basic python and r toolkits
+* Other basic Python and r toolkits
 ```
 ### Installation of other dependencies
 * Install [R package glmnetcr](https://github.com/cran/glmnetcr) using ` devtools::install_github("cran/glmnetcr") ` in the R environment if you encounter any issue.
@@ -44,17 +44,35 @@ ImmRegInformer is tested to work under:
 # Quick start
 To reproduce our results:
 
+## Data Preparation
+- Calculation of the cytolytic activity score of tumor samples
+- Calculation of the mutation co-occurrence odd ratios and p-values for each driver mutation pair
+
+
 ## 1. Application and validation in the identification of immune-regulators
 ```
 python ./main.py
 ```
+
 **Arguments**:
 
 | **Arguments** | **Detail** |
 | --- | --- |
-| **counts-data** | [ensembl or gene_name or hgnc_symbol] |
-| **threads** | Max of threads to process the data. |
-| **output-path** | Directory where the results will be allocated (the directory must exist). |
+| **Solid_tumor_mutation_status_mat.csv** | Mutation status profile of 8223 solid tumor samples with matched expression data. |
+| **Solid_tumor_CYT_score_df.csv** | Cytolytic activity score of 8223 solid tumor samples. |
+| **Solid_tumor_RNA_data.RData** | RNA-seq data of 8223 solid tumor samples. |
+| **Solid_tumor_mutation_cooccurrence_mat.csv** | Co-occurrence analysis of each driver mutation pair based on Fisher's exact test. |
+
+**Values**:
+
+| **Output** | **Detail** |
+| --- | --- |
+| **model_state_dict.pt** | Cytolytic activity score of 8223 solid tumor samples. |
+| **selfattention.csv** | Mutation status profile of 8223 solid tumor samples with matched expression data. |
+| **embedding.csv** | Co-occurrence analysis of each driver mutation pair based on Fisher's exact test. |
+| **fc1weight.csv** | RNA-seq data of 8223 solid tumor samples. |
+
+
 
 ```
 Rscript ./tools/run_cellchat.R --count ./data/RCC_scRNA_P76_matrix.txt --meta ./data/RCC_scRNA_P76_metadata.txt  --output ./output/
@@ -64,6 +82,8 @@ Rscript ./tools/run_nichenet.R --count ./data/RCC_scRNA_P76_matrix.txt --meta ./
 
 Rscript ./tools/run_icellnet.R --count ./data/RCC_scRNA_P76_matrix.txt --meta ./data/RCC_scRNA_P76_metadata.txt  --output ./output/
 ```
+
+
 **Arguments**:
 
 | **Arguments** | **Detail** |
@@ -71,6 +91,7 @@ Rscript ./tools/run_icellnet.R --count ./data/RCC_scRNA_P76_matrix.txt --meta ./
 | **count** | Count matrix / normalized count matrix path. |
 | **meta** | Meta data (celltypes annotation) path. |
 | **output** | Directory where the results will be allocated. |
+
 
 ```
 # Obtain the intersection of LR pairs output by 4 cellular communication tools, which are required to be found by at least 2 tools and have expression in scRNA-seq data.
