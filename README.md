@@ -86,19 +86,9 @@ python ./main.py
 </div>
 
 ## 2. Interplay of cancer drivers in regulating immune response
-```
-python ./src/tutorials1/main.py --count ./data/RCC_scRNA_P76_matrix.txt --meta ./data/RCC_scRNA_P76_metadata.txt --lr_file ./output/final_lr.csv --gene CD8A --dca_rank_result ./output/CD8A_dca_rank_result.csv --ccc_ratio_result ./output/CD8A_ccc_ratio_result.csv
-```
-**Arguments**:
 
-| **Arguments** | **Detail** |
-| --- | --- |
-| **count** | Count matrix / normalized count matrix path. |
-| **meta** | Meta data (celltypes annotation) path. |
-| **lr_file** | The final results of LR pairs. |
-| **gene** | The specific target gene name  |
-| **dca_rank_result** | The result of prioritize the dominant cell communication assmebly that regulates the target gene expression pattern. |
-| **ccc_ratio_result** | The result of ratio of different cell types affected by cellular communication. |
+See Rscripts
+
 
 Visualization of results:
 <div align="center">
@@ -108,21 +98,10 @@ Visualization of results:
 
 
 ## 3. Prioritizing cancer drivers in order of contribution to immune regulation
-```
-python ./src/tutorials2/main.py --count ./data/RCC_scRNA_P76_matrix.txt --meta ./data/RCC_scRNA_P76_metadata.txt --lr_file ./output/final_lr.csv --gene FOLR2 --cell_type TAM --dca_rank_result ./output/FOLR2_dca_rank_result.csv --ccc_ratio_result ./output/FOLR2_ccc_ratio_result.csv
-```
-**Arguments**:
 
-| **Arguments** | **Detail** |
-| --- | --- |
-| **count** | Count matrix / normalized count matrix path. |
-| **meta** | Meta data (celltypes annotation) path. |
-| **lr_file** | The final results of LR pairs. |
-| **gene** | The specific target gene name.  |
-| **cell_type** | The specific cell type (TAM:tumor-associated macrophages).  |
-| **dca_rank_result** | The result of prioritize the dominant cell communication assmebly that regulates the target gene expression pattern. |
-| **ccc_ratio_result** | The result of ratio of different cell types affected by cellular communication. |
+See Rscripts
 
+Visualization of results:
 
 
 ===========================================================================
