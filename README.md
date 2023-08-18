@@ -92,7 +92,7 @@ See Rscripts
 
 Visualization of results:
 <div align="center">
-  <img src="https://github.com/Liwen-Liberty/ImmregInformer/blob/main/readmepic/Figure4.png" alt="Editor" width="500">
+  <img src="https://github.com/Liwen-Liberty/ImmregInformer/blob/main/Figures/Figure4.png" alt="Editor" width="500">
 </div>
 
 
