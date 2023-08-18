@@ -103,6 +103,10 @@ See Rscripts
 
 Visualization of results:
 
+<div align="center">
+  <img src="https://github.com/Liwen-Liberty/ImmregInformer/blob/main/Figures/Figure5.png" alt="Editor" width="500">
+</div>
+
 
 ===========================================================================
 
